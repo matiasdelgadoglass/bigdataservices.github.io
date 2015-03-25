@@ -1,0 +1,75 @@
+<article class="modalWindow {{modalClass}}" style="overflow:auto"> <header> <h3>{{modalTitle}}</h3> <span class="btn-close" role="button" tabindex="0" ng-click="closeModal()"> <i class="fa fa-times"></i> </span> </header> <section> <div ng-show="modalMessage">{{modalMessage}}</div> <div ng-show="modalData">{{modalData}}</div> <div> <!-- MAIN CONTAINER SOURCE--> <header> <nav class="structural-principal-nav"> <div class="btn-group" ng-init="sourceShow='sourceNodes'"> <button type="button" class="btn w145" ng-class="{active: sourceShow=='sourceNodes'  }" ng-click="sourceShow='sourceNodes'">Nodes ({{dataSource.nodes.length}})</button> <button type="button" class="btn w145" ng-class="{active: sourceShow=='sourceEdges'  }" ng-click="sourceShow='sourceEdges'">Edges ({{dataSource.edges.length}})</button> </div> </nav> </header> <article class="sourceBox"> <section ng-show="sourceShow=='sourceNodes'"> <table class="table"> <thead> <tr> <th> <div> <p>&#35;</p> <div> <span role="button" tabindex="0"><i class="fa fa-angle-up"></i></span> <span role="button" tabindex="0"><i class="fa fa-angle-down"></i></span> </div> </div>  <th ng-repeat="(k,v) in dataSource.nodes[0]"> <div> <p title="{{k}}">{{k}}</p> <div> <span role="button" tabindex="0"><i class="fa fa-angle-up"></i></span> <span role="button" tabindex="0"><i class="fa fa-angle-down"></i></span> </div> </div>    <tbody> <tr ng-repeat="node in dataSource.nodes "> <td><p>{{$index+1}}</p> <td ng-repeat="(k,v) in node "><p>{{v}}</p>   </table> </section> <!--<section ng-show="sourceShow=='sourceEdges'">
+          <header>
+            <h3><i class="fa fa-table"></i>Edges</h3>
+            <nav>
+              <div class="btn-group btn-dropdown-group" ng-init="dropdown=false">
+                <button type="button" class="btn w100">Display all</button>
+                <button type="button" class="btn btn-dropdown w100" ng-click="dropdown=!dropdown">
+                  Display
+                  <i class="fa fa-caret-down" ng-show="dropdown==false"></i>
+                  <i class="fa fa-caret-up" ng-show="dropdown==true"></i>
+                </button>
+                <ul class="dropdown-menu" ng-class="{active: dropdown==true}">
+                  <li>
+                    <input type="checkbox" id="color" value="color" name="color"> 
+                    <label for="color">Color</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="fixed" value="fixed" name="filter"> 
+                    <label for="fixed">Fixed</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="val" value="val" name="filter"> 
+                    <label for="val">Val</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="hander" value="hander" name="filter"> 
+                    <label for="hander">Hander</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="klander" value="klander" name="filter"> 
+                    <label for="klander">Klander</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="trosker" value="trosker" name="filter"> 
+                    <label for="trosker">trosker</label>
+                  </li>
+                </ul>
+              </div>
+              <div class="search">
+                <input type="search" placeholder="">
+                <button class="btn w20"><i class="fa fa-search"></i></button>
+              </div>
+            </nav>
+          </header>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>
+                  <div>
+                      <p>&#35;</p>
+                      <div>
+                        <span role="button" tabindex="0"><i class="fa fa-angle-up"></i></span>
+                        <span role="button" tabindex="0"><i class="fa fa-angle-down"></i></span>
+                      </div>
+                  </div>
+                </th>
+                <th ng-repeat="(k,v) in dataSource.edges[0]">
+                  <div>
+                    <p title="{{k}}">{{k}}</p>
+                    <div>
+                      <span role="button" tabindex="0"><i class="fa fa-angle-up"></i></span>
+                      <span role="button" tabindex="0"><i class="fa fa-angle-down"></i></span>
+                    </div>
+                  </div>
+                </th>
+              </tr>  
+            </thead>
+            <tbody>
+              <tr ng-repeat="edge in dataSource.edges">
+                <td><p>{{$index+1}}</p></td>
+                <td ng-repeat="(k,v) in edge "><p>{{v}}</p></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>--> </article> </div> </section> </article>
